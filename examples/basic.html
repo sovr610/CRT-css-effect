@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRT Effect Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        .content {
+            text-align: center;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+    <script src="../dist/crt-effect.js"></script>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to the CRT Era</h1>
+        <p>Experience the nostalgia of old televisions!</p>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof CRTEffect !== 'undefined' && CRTEffect.applyCRTEffect) {
+                CRTEffect.applyCRTEffect(document.body);
+            } else {
+                console.error('CRT Effect Library not loaded properly');
+            }
+        });
+    </script>
+</body>
+</html>
